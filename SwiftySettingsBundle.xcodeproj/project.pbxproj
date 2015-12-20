@@ -15,6 +15,8 @@
 		15011E5B1C26B0EC00FCB66E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15011E591C26B0EC00FCB66E /* LaunchScreen.storyboard */; };
 		15011E661C26B0EC00FCB66E /* SwiftySettingsBundleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15011E651C26B0EC00FCB66E /* SwiftySettingsBundleTests.swift */; };
 		15011E711C26B0EC00FCB66E /* SwiftySettingsBundleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15011E701C26B0EC00FCB66E /* SwiftySettingsBundleUITests.swift */; };
+		15011E801C26B10E00FCB66E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 15011E7F1C26B10E00FCB66E /* Settings.bundle */; };
+		15011E841C26B1B700FCB66E /* AuthenticationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15011E831C26B1B700FCB66E /* AuthenticationUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		15011E6C1C26B0EC00FCB66E /* SwiftySettingsBundleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftySettingsBundleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15011E701C26B0EC00FCB66E /* SwiftySettingsBundleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftySettingsBundleUITests.swift; sourceTree = "<group>"; };
 		15011E721C26B0EC00FCB66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15011E7F1C26B10E00FCB66E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		15011E831C26B1B700FCB66E /* AuthenticationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		15011E4C1C26B0EC00FCB66E /* SwiftySettingsBundle */ = {
 			isa = PBXGroup;
 			children = (
+				15011E7E1C26B0F000FCB66E /* SettingsBundle */,
 				15011E4D1C26B0EC00FCB66E /* AppDelegate.swift */,
 				15011E4F1C26B0EC00FCB66E /* ViewController.swift */,
 				15011E511C26B0EC00FCB66E /* Main.storyboard */,
@@ -126,6 +131,15 @@
 				15011E721C26B0EC00FCB66E /* Info.plist */,
 			);
 			path = SwiftySettingsBundleUITests;
+			sourceTree = "<group>";
+		};
+		15011E7E1C26B0F000FCB66E /* SettingsBundle */ = {
+			isa = PBXGroup;
+			children = (
+				15011E831C26B1B700FCB66E /* AuthenticationUtil.swift */,
+				15011E7F1C26B10E00FCB66E /* Settings.bundle */,
+			);
+			name = SettingsBundle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15011E801C26B10E00FCB66E /* Settings.bundle in Resources */,
 				15011E5B1C26B0EC00FCB66E /* LaunchScreen.storyboard in Resources */,
 				15011E581C26B0EC00FCB66E /* Assets.xcassets in Resources */,
 				15011E531C26B0EC00FCB66E /* Main.storyboard in Resources */,
@@ -260,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15011E561C26B0EC00FCB66E /* SwiftySettingsBundle.xcdatamodeld in Sources */,
+				15011E841C26B1B700FCB66E /* AuthenticationUtil.swift in Sources */,
 				15011E501C26B0EC00FCB66E /* ViewController.swift in Sources */,
 				15011E4E1C26B0EC00FCB66E /* AppDelegate.swift in Sources */,
 			);

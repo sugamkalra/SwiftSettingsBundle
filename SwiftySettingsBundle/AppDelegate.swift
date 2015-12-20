@@ -15,10 +15,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
         // Override point for customization after application launch.
+        
+        // Notification to get change in settings
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("settingsChanged"),
+            name: NSUserDefaultsDidChangeNotification, object: nil)
+        
         return true
     }
+    
+    /**
+     App Settings change handler. Check if need to logout
+     */
+    func settingsChanged() {
+        let settings = NSUserDefaults.standardUserDefaults()
+        let needLogout = settings.valueForKey(kLogoutSwitch) as? Bool ?? false
+        if needLogout {
+            settings.setValue(false, forKey: kLogoutSwitch)
+            AuthenticationUtil.sharedInstance.logout()
+            
+            // Move to the first screen
+            getNavigationController()?.popToRootViewControllerAnimated(true)
+        }
+    }
+    
+    /**
+     Returns the navigation controller if it exists
+     
+     - returns: the navigation controller or nil
+     */
+    func getNavigationController() -> UINavigationController? {
+        if let navigationController = UIApplication.sharedApplication().keyWindow?.rootViewController  {
+            return navigationController as? UINavigationController
+        }
+        return nil
+    }
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

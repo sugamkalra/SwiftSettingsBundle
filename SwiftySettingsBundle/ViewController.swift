@@ -8,6 +8,10 @@
 
 import UIKit
 
+/// the Logout switch constant
+let kLogoutSwitch = "logoutSwitch"
+
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
